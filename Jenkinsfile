@@ -11,32 +11,32 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building the project (simple echo)...'
-                sh 'echo Build step - no build tool required!'
+                echo 'Building the project...'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests (simple echo)...'
-                sh 'echo Test step - no test framework!'
+                echo 'Running tests...'
+                // Example test command:
+                // sh 'mvn test'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying application (simple echo)...'
-                sh 'echo Deploy step - no deploy required!'
+                echo 'Deploying application...'
+                // Add your deploy logic here
             }
         }
     }
 
     post {
         success {
-            echo '✅ Pipeline completed successfully!'
+            echo 'Pipeline completed successfully!'
         }
         failure {
-            echo '❌ Pipeline failed.'
+            echo 'Pipeline failed.'
         }
     }
 }
