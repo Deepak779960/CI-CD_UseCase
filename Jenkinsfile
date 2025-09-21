@@ -12,21 +12,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project (simple echo)...'
-                sh 'echo "Build step - no build tool required!"'
+                sh 'echo Build step - no build tool required!'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests (simple echo)...'
-                sh 'echo "Test step - no test framework!"'
+                sh 'echo Test step - no test framework!'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying application (simple echo)...'
-                sh 'echo "Deploy step - no deploy required!"'
+                sh 'echo Deploy step - no deploy required!'
             }
         }
     }
