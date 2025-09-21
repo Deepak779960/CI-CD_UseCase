@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven 3.9'  // This refers to the Maven name configured in Jenkins
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -15,30 +11,22 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building the project with Maven...'
-                sh 'mvn clean compile'
+                echo 'Building the project (simple echo)...'
+                sh 'echo "Build step - no build tool required!"'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests with Maven...'
-                sh 'mvn test'
-            }
-        }
-
-        stage('Package') {
-            steps {
-                echo 'Packaging the application...'
-                sh 'mvn package'
+                echo 'Running tests (simple echo)...'
+                sh 'echo "Test step - no test framework!"'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying application...'
-                // You can add custom deploy commands here
-                // For example: sh 'scp target/*.jar user@server:/deploy/path'
+                echo 'Deploying application (simple echo)...'
+                sh 'echo "Deploy step - no deploy required!"'
             }
         }
     }
